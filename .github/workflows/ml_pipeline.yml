@@ -21,14 +21,16 @@ jobs:
 
     - name: 📦 Install dependencies
       run: |
-        python -m pip install --upgrade pip
+        python3 -m pip install --upgrade pip
+        python3 -m venv venv
+        source venv/bin/activate
         pip install -r requirements.txt
     - name: Build model
       run: |
-        ptyhon src/train.py
+        python3 src/train.py
 
     - name: 🧹 Run Preprocessing
-      run: python main.py
+      run: python3 main.py
 
     - name: 💾 Upload trained model
       uses: actions/upload-artifact@v4
