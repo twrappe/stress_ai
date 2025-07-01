@@ -25,7 +25,7 @@ jobs:
         pip install -r requirements.txt
     - name: Build model
       run: |
-        ptyhon -m src/train.py
+        ptyhon src/train.py
 
     - name: 🧹 Run Preprocessing
       run: python main.py
