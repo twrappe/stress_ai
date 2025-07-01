@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score, f1_score, confusion_matrix
 import joblib  # for saving model
 
-def train_model(features_csv="data/processed/gsr_features_labeled.csv", model_path="models/stress_classifier.pkl"):
+def train_model(features_csv="data/processed/features.csv", model_path="models/stress_classifier.pkl"):
     # Load features
     df = pd.read_csv(features_csv) 
     X = df.drop("label", axis=1)

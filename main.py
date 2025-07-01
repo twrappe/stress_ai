@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from collections import deque
-from features import extract_features
+from src.features import extract_features
 import joblib
 
 # Load trained model
