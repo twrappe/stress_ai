@@ -1,0 +1,16 @@
+import joblib
+import pandas as pd
+from sklearn.metrics import accuracy_score
+
+def test_model_accuracy():
+    model = joblib.load("models/stress_classifier.pkl")
+    df = pd.read_csv("data/processed/features.csv")
+    
+    X = df.drop("label", axis=1)
+    y = df["label"]
+    
+    preds = model.predict(X)
+    acc = accuracy_score(y, preds)
+
+    # Set a baseline threshold to catch degradation
+    assert acc >= 0.80  # Adjust as needed
